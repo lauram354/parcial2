@@ -1,0 +1,14 @@
+.texto{
+    justify-content: center;
+    align-items: center;
+}
+
+.arriba{
+    background-color: #1E90FF;
+    justify-content: center;
+    display: fit-content;
+}
+
+.foto-banner{
+    height: 300px;
+}

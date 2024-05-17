@@ -1,0 +1,36 @@
+
+<header class = "arriba text-center">
+  <img
+      class="foto-banner"
+      src="https://raw.githubusercontent.com/VivianGomez/ImagenesParcialDSE/main/anime%20Logo.png"
+      alt="Logo"
+    />
+</header>
+<br/>
+<div class="container">
+  <div>
+    <p> La cantidad total de episodios es <span> {{totalEpisodios()}}</span> y el rating promedio es <span>{{averageRating()}}</span></p>
+  </div>
+  <div *ngIf="selected">
+    <app-anime-detail [animeDetail]="selectedAnime"></app-anime-detail>
+  </div>
+  <div class="row">
+    <div class="col mb-2" *ngFor="let a of animes">
+      <div class="card p-2" style="width: 15rem; height: 33rem">
+        <h6 class="card-header text-center"> {{ a.name }} </h6>
+        <img
+          class="card-img-top"
+          src="{{ a.img }}"
+          alt="{{ a.name }}"
+        />
+        <div class="card-body">
+          <p class="card-title">⭐ {{a.Rating}}</p>
+          <p class="card-text"> Categorie: {{ a.categorie }}</p>
+        </div>
+        <div>
+          <button class="btn btn-primary" (click)="onSelected(a)">More Information </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
